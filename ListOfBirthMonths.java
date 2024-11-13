@@ -1,4 +1,3 @@
-package BirthMonth;
 
 public enum ListOfBirthMonths {
     JANUARY,

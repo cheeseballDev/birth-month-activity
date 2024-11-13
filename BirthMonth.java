@@ -1,4 +1,3 @@
-package BirthMonth;
 
 import java.util.Scanner;
 import java.util.Set;
@@ -17,18 +16,24 @@ public class BirthMonth implements Runnable {
     }
 
     void promptUser() {
-        
-        for (int i = 1; i <= 4; i++) {
-            System.out.print("Enter birth month number " + i + ": ");
-            
+        for (int i = 1; i <= 3; i++) {
+            System.out.print("Enter birth month " + i + ": ");
+            Collections.addAll(group1, getBirthMonth());
         }
+        for (int l = 1; l <= 3; l++) {
+            System.out.print("Enter birth month " + l + ": ");
+            Collections.addAll(group2, getBirthMonth());
+        }
+        System.out.println(group1);
+        System.out.println(group2);
+        System.out.println(group1.addAll(group2));
     }
 
     String getBirthMonth() {
         Scanner userInput = new Scanner(System.in);
-        String BirthMonth = userInput.nextLine();
+        String BirthMonth = userInput.nextLine().toUpperCase();
         for (ListOfBirthMonths month : ListOfBirthMonths.values()) {
-            if (BirthMonth == month.toString().toUpperCase()) {
+            if (BirthMonth == month.toString()) {
                 return BirthMonth;
             }
         }
